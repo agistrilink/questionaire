@@ -1,0 +1,23 @@
+<?php
+?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Käuferprortal Fragenbogen</title>
+</head>
+<body>
+<h1>Käuferprortal Fragenbogen</h1>
+<form action='<?php echo $this->baseUrl?>/questionaire/complete'>
+	<table class='page'>
+		<tr><td>Name</td><td><input name='name' type='text'></input></td></tr>
+		<tr><td>Nachname</td><td><input name='surname' type='text'></input></td></td></tr>
+	</table>
+	<div style='display:none'>
+		<input name='uuid' value='<?php echo $this->uuid?>'>
+		<input name='answers' value='<?php echo Zend_Json::encode($this->answers)?>'>
+	</div>
+	<input type="submit"></input>
+</form>
+</body>
+</html>

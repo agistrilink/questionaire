@@ -1,0 +1,18 @@
+<?php 
+	require_once('Questionaire.php');
+	
+	$isCheckbox = Questionaire::isMultipleAnswerQuestion($this->question);
+	
+	$questionUuid = Questionaire::wrapQuestionIdParam($this->question['uuid']);
+	if ($isCheckbox)
+		$questionUuid .= '[]';
+	
+	$type = $isCheckbox?'checkbox':'radio';
+	
+	foreach ($this->question['answers'] as $answer) {
+		$label = $answer['label'];
+		$answerUuid = $answer['uuid'];
+		echo "<div><input class='answer' name='$questionUuid' type='$type' value='$answerUuid'></input>$label</div>";
+	}
+?>
+

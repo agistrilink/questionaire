@@ -1,0 +1,13 @@
+<tr>
+	<td class='number'><img alt="" src="<?php echo $this->baseUrl.'/public/img/'.$this->question['number'].'.png'?>"></td>
+	<td class='question'>
+		<table>
+			<tr>
+				<td class='tail active'><?php echo $this->question['label']?></td>
+				<td class='head active'>&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+	<td class='answers'><?php echo $this->render('answers.phtml')?></td>
+</tr>
+
